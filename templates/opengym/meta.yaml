@@ -1,0 +1,90 @@
+name: openGym
+description:
+  openGym is an open-source workout tracker with 5,632 exercises, guided
+  sessions with rest timers and PR detection, automatic weight progression
+  (linear, Greyskull LP, double progression), statistics with estimated 1RM,
+  muscle maps and activity heatmaps. The self-hosted flavor adds passkey
+  profiles, sync across devices, an installable PWA, push notifications and an
+  optional admin dashboard and AI Coach. No telemetry, no third-party accounts;
+  all data lives in one data folder on your own server.
+instructions: |
+  Create your profile with a passkey on first visit. Passkeys require HTTPS:
+  set a real domain for the app service before inviting anyone ( Easypanel
+  domain via a subdomain works out of the box ). If you use only the IP/port,
+  use guest mode or enable PASSWORD_LOGIN. To become admin, set
+  ADMIN_UIDS ( from Settings → Account → Account ID ) or FIRST_USER_ADMIN=1
+  before the first profile is created. Changing RP_ID later invalidates
+  existing passkeys.
+changeLog:
+  - date: 2026-11-08
+    description: first release, v1.4.4
+links:
+  - label: Website
+    url: https://opengym.ch/
+  - label: Documentation
+    url: https://opengym.ch/docs.html
+  - label: Github
+    url: https://github.com/DuarteSantos8/openGym
+contributors:
+  - name: Shay Punter
+    url: https://github.com/shaypunter
+schema:
+  type: object
+  required:
+    - appServiceName
+    - appServiceImage
+    - apiServiceImage
+  properties:
+    appServiceName:
+      type: string
+      title: App Service Name
+      default: opengym
+    appServiceImage:
+      type: string
+      title: Web Service Image
+      default: ghcr.io/duartesantos8/opengym-web:1.4.4
+    apiServiceImage:
+      type: string
+      title: API Service Image
+      default: ghcr.io/duartesantos8/opengym-api:1.4.4
+benefits:
+  - title: Your data, one folder
+    description:
+      Everything ( profiles, plans, workouts, weigh-ins, audit log ) lives in
+      a single data folder you can back up with one tar command. Your training
+      log is a file you own.
+  - title: Privacy by design
+    description:
+      No telemetry, no analytics, no third-party accounts. Passkey private
+      keys never leave your device - the server stores only public keys.
+  - title: Sync across devices
+    description:
+      Signed-in profiles sync every 30 seconds across browser, phone PWA and
+      the mobile app, merging changes from both sides instead of overwriting.
+  - title: Serious training science
+    description:
+      Automatic progression programs, estimated 1RM, muscle fatigue mapping
+      and structural balance ratios, all computed from the same pure
+      functions used by the mobile apps.
+features:
+  - title: 5,632 exercises with animations
+    description:
+      Searchable catalogue with animated demonstrations, equipment filters,
+      supersets, warm-up sets, timed and bodyweight exercises.
+  - title: Guided workout sessions
+    description:
+      Weights pre-filled from last time, rest timers, plate math, PR
+      detection and push notifications even with the app closed.
+  - title: Passkey profiles
+    description:
+      Sign in with Face ID, fingerprint or a password manager. Up to 20
+      passkeys per profile, plus optional password sign-in for plain-HTTP
+      setups.
+  - title: Optional AI Coach and admin dashboard
+    description:
+      Bring your own LLM provider to generate and review training plans, and
+      manage members, invites and the activity log from an admin dashboard.
+tags:
+  - Fitness
+  - Health
+  - Tracking
