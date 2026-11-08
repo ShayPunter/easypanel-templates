@@ -21,6 +21,7 @@ export function generate(input: Input): Output {
         `PORT=3000`,
         `DATA_DIR=/data`,
         `TRUST_PROXY=1`,
+        `FIRST_USER_ADMIN=${input.firstUserAdmin ? 1 : 0}`,
         // Optional switches - uncomment and rebuild the service to apply:
         // FIRST_USER_ADMIN=1
         // INVITE_ONLY=1

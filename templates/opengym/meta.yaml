@@ -51,6 +51,10 @@ schema:
       type: string
       title: Domain
       default: opengym.$(EASYPANEL_DOMAIN)
+    firstUserAdmin:
+      type: boolean
+      title: Make the first profile the admin
+      default: true
 benefits:
   - title: Your data, one folder
     description:
