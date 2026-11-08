@@ -16,8 +16,8 @@ export function generate(input: Input): Output {
         image: input.apiServiceImage,
       },
       env: [
-        `RP_ID=$(PRIMARY_DOMAIN)`,
-        `ORIGIN=https://$(PRIMARY_DOMAIN)`,
+        `RP_ID=$(EASYPANEL_DOMAIN)`,
+        `ORIGIN=https://$(EASYPANEL_DOMAIN)`,
         `PORT=3000`,
         `DATA_DIR=/data`,
         `TRUST_PROXY=1`,
