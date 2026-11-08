@@ -16,8 +16,8 @@ export function generate(input: Input): Output {
         image: input.apiServiceImage,
       },
       env: [
-        `RP_ID=$(EASYPANEL_DOMAIN)`,
-        `ORIGIN=https://$(EASYPANEL_DOMAIN)`,
+        `RP_ID=${input.domain}`,
+        `ORIGIN=https://${input.domain}`,
         `PORT=3000`,
         `DATA_DIR=/data`,
         `TRUST_PROXY=1`,
@@ -62,7 +62,7 @@ export function generate(input: Input): Output {
       ].join("\n"),
       domains: [
         {
-          host: "$(EASYPANEL_DOMAIN)",
+          host: input.domain,
           port: 80,
         },
       ],

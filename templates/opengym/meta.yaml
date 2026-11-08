@@ -47,6 +47,10 @@ schema:
       type: string
       title: API Service Image
       default: ghcr.io/duartesantos8/opengym-api:1.4.4
+    domain:
+      type: string
+      title: Domain
+      default: opengym.$(EASYPANEL_DOMAIN)
 benefits:
   - title: Your data, one folder
     description:
